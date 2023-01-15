@@ -5,7 +5,7 @@ class DeviseCreateUsers < ActiveRecord::Migration[5.1]
     create_table :users do |t|
       ## Database authenticatable
       t.string :email,              null: false, default: ""
-      t.string :encrypted_password, null: false, default: ""
+      t.string :encrypted_password, default: ""
 
       ## Recoverable
       t.string   :reset_password_token
@@ -13,6 +13,11 @@ class DeviseCreateUsers < ActiveRecord::Migration[5.1]
 
       ## Rememberable
       t.datetime :remember_created_at
+
+      # omniauthable
+      t.string :full_name
+      t.string :uid
+      t.string :avatar_url
 
       ## Trackable
       # t.integer  :sign_in_count, default: 0, null: false
