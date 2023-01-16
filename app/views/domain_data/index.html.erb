@@ -1,0 +1,31 @@
+<h1>Data Analytics Platform</h1>
+<% if user_signed_in? %>
+  <div> User id : <%= current_user.id%></div>
+  <div> User email : <%= current_user.email %></div>
+  <br>
+  <%= render 'import' %>
+  <br>
+
+  <table>
+    <thead>
+    <tr>
+      <th>File</th>
+      <th colspan="1"></th>
+    </tr>
+    </thead>
+
+    <tbody>
+    <% @domain_data.each do |domain_datum| %>
+      <tr>
+        <td><%=link_to domain_datum.file_name, import_file_domain_data_path(:file_name => domain_datum.file_name), method: :get%></td>
+      </tr>
+    <% end %>
+    </tbody>
+  </table>
+  <br>
+
+  <%= button_to "Sign out", destroy_user_session_path, method: :delete %>
+<% else %>
+  <%= button_to "Sign in", new_user_session_path, method: :get%>
+<% end %>
+

@@ -1,0 +1,36 @@
+<table>
+  <thead>
+  <tr>
+    <th>Date</th>
+    <th>Domain rating</th>
+    <th>Domain name</th>
+    <th colspan="3"></th>
+  </tr>
+  </thead>
+
+  <tbody>
+  <% @domain_data['table_data'].each do |domain_datum| %>
+    <tr>
+      <td><%= domain_datum.date %></td>
+      <td><%= domain_datum.domain_rating %></td>
+      <td><%= domain_datum.domain_name %></td>
+    </tr>
+  <% end %>
+  </tbody>
+</table>
+<br>
+<br>
+<div>
+  <%= "Generated Aggregations" %>
+  <br>
+  <br>
+  <%="Max Value : #{@domain_data['max_value']}"%>
+  <br>
+  <br>
+  <%="Time series plot:" %>
+  <br>
+  <%= line_chart @domain_data['time_series_data'], xtitle: "Date", ytitle: "Domain Rating"%>
+  <br>
+  <br>
+  <%="Median Value : #{@domain_data['median_value']}" %>
+</div>

@@ -1,7 +1,7 @@
 source 'https://rubygems.org'
 
 git_source(:github) do |repo_name|
-  repo_name = "#{repo_name}/#{repo_name}" unless repo_name.include?("/")
+  repo_name = "#{repo_name}/#{repo_name}" unless repo_name.include?('/')
   "https://github.com/#{repo_name}.git"
 end
 
@@ -24,7 +24,9 @@ gem 'omniauth'
 
 gem 'omniauth-google-oauth2'
 
-gem "omniauth-rails_csrf_protection"
+gem 'omniauth-rails_csrf_protection'
+
+gem 'chartkick'
 
 # Use CoffeeScript for .coffee assets and views
 gem 'coffee-rails', '~> 4.2'

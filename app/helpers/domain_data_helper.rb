@@ -1,0 +1,2 @@
+module DomainDataHelper
+end
