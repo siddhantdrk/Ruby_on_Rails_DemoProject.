@@ -1,0 +1,17 @@
+<div>
+  <%= "Generated Insights" %>
+  <br>
+  <br>
+  <%="Max Value : #{@domain_data['max_value']}"%>
+  <br>
+  <br>
+  <%="Min Value : #{@domain_data['min_value']}"%>
+  <br>
+  <br>
+  <%="Median Value : #{@domain_data['median_value']}" %>
+  <br>
+  <br>
+  <%="Time series plot:" %>
+  <br>
+  <%= line_chart @domain_data['time_series_data'], xtitle: "Date", ytitle: "Domain Rating"%>
+</div>

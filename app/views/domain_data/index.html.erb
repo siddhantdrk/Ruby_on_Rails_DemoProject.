@@ -15,13 +15,18 @@
     </thead>
 
     <tbody>
-    <% @domain_data.each do |domain_datum| %>
+    <% @domain_data['file_data'].each do |domain_datum| %>
       <tr>
         <td><%=link_to domain_datum.file_name, import_file_domain_data_path(:file_name => domain_datum.file_name), method: :get%></td>
       </tr>
     <% end %>
     </tbody>
   </table>
+  <br>
+
+  <br>
+  <%= button_to "Generate Insights", generate_insights_domain_data_path, method: :get%>
+  <br>
   <br>
 
   <%= button_to "Sign out", destroy_user_session_path, method: :delete %>
