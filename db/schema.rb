@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20230115205521) do
+ActiveRecord::Schema.define(version: 20230118073248) do
 
   create_table "domain_data", force: :cascade do |t|
     t.string "user_id"
@@ -18,6 +18,8 @@ ActiveRecord::Schema.define(version: 20230115205521) do
     t.string "date"
     t.string "domain_rating"
     t.string "domain_name"
+    t.string "s3_url"
+    t.string "s3_name"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end

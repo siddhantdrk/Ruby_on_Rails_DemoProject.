@@ -41,6 +41,9 @@ GEM
     addressable (2.8.1)
       public_suffix (>= 2.0.2, < 6.0)
     arel (8.0.0)
+    aws-sdk-v1 (1.67.0)
+      json (~> 1.4)
+      nokogiri (~> 1)
     bcrypt (3.1.18)
     bindex (0.8.1)
     builder (3.2.4)
@@ -87,6 +90,7 @@ GEM
     jbuilder (2.11.5)
       actionview (>= 5.0.0)
       activesupport (>= 5.0.0)
+    json (1.8.6)
     jwt (2.6.0)
     listen (3.1.5)
       rb-fsevent (~> 0.9, >= 0.9.4)
@@ -242,6 +246,7 @@ PLATFORMS
   arm64-darwin-21
 
 DEPENDENCIES
+  aws-sdk-v1
   byebug
   capybara (>= 2.15)
   chartkick

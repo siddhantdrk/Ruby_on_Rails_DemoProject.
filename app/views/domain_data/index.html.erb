@@ -10,14 +10,16 @@
     <thead>
     <tr>
       <th>File</th>
-      <th colspan="1"></th>
+      <th>S3_url</th>
+      <th colspan="2"></th>
     </tr>
     </thead>
 
     <tbody>
-    <% @domain_data['file_data'].each do |domain_datum| %>
+    <% @domain_data.each do |domain_datum| %>
       <tr>
         <td><%=link_to domain_datum.file_name, import_file_domain_data_path(:file_name => domain_datum.file_name), method: :get%></td>
+        <td><%=link_to domain_datum.s3_name, domain_datum.s3_url%></td>
       </tr>
     <% end %>
     </tbody>

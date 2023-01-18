@@ -20,7 +20,7 @@ Rails.application.configure do
     config.public_file_server.headers = {
       'Cache-Control' => "public, max-age=#{2.days.seconds.to_i}"
     }
-  else
+  elseE
     config.action_controller.perform_caching = false
 
     config.cache_store = :null_store
@@ -28,6 +28,9 @@ Rails.application.configure do
 
   # Don't care if the mailer can't send.
   config.action_mailer.raise_delivery_errors = false
+
+
+  config.action_mailer.default_url_options = { host: "localhost", port: 3000 }
 
   config.action_mailer.perform_caching = false
 
@@ -55,4 +58,8 @@ Rails.application.configure do
   ENV['GOOGLE_OAUTH_CLIENT_ID'] = '461540920304-aeupg4v1j7up8bpr8l1fiq6grh40a302.apps.googleusercontent.com'
   ENV['GOOGLE_OAUTH_CLIENT_SECRET'] = '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'
 
+
+  ENV['AWS_ACCESS_KEY_ID'] = 'AKIAU6LCYMVCCKPKZDMH'
+  ENV['AWS_SECRET_ACCESS_KEY'] = '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'
+  ENV['S3_BUCKET'] = 'siddhant-data-analytics-bucket'
 end
