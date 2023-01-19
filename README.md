@@ -1,24 +1,15 @@
 # README
+DESIGN architecture for Data Analytics Platform
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+Requirements
 
-Things you may want to cover:
-
-* Ruby version
-
-* System dependencies
-
-* Configuration
-
-* Database creation
-
-* Database initialization
-
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
+- User should be able to Sign up (Email/password/Google)
+- User should be able to Login via password or google oauth
+- User should be able to upload a CSV
+    - Save CSV, name and other meta-information
+    - Option to download CSV template
+    - The template will look something like this -> date, value, domain_name
+- User should be able to fetch results for aggregations over this data
+example - get max value, plot time series, get median etc.
+- User should be able to share the results with other users over EMAIL
+    - Other users should be able to download the results via S3.
